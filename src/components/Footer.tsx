@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Leaf, Mail, Check, Instagram, Facebook, Twitter, MapPin, Phone, Heart } from 'lucide-react';
 import { CafeLogo } from './CafeLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { openWhatsAppChat, formatGeneralInquiryWhatsAppMessage, CAFE_DISPLAY_PHONE } from '../utils/whatsapp';
+import { openWhatsAppChat, formatGeneralInquiryWhatsAppMessage, CAFE_DISPLAY_PHONE, CAFE_MAPS_LINK, CAFE_ADDRESS } from '../utils/whatsapp';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -150,10 +150,15 @@ export const Footer: React.FC = () => {
               Contact & Address
             </h4>
             <div className="space-y-2 text-[#888888] font-light">
-              <p className="flex items-start gap-1.5">
-                <MapPin className="w-4 h-4 shrink-0 text-white mt-0.5" />
-                <span>428 Wisteria Lane, Conservatory District</span>
-              </p>
+              <a
+                href={CAFE_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-1.5 hover:text-white transition-colors group"
+              >
+                <MapPin className="w-4 h-4 shrink-0 text-white mt-0.5 group-hover:text-[#25D366] transition-colors" />
+                <span className="group-hover:underline">{CAFE_ADDRESS.full}</span>
+              </a>
               <p className="flex items-center gap-1.5">
                 <Phone className="w-4 h-4 shrink-0 text-white" />
                 <span>{CAFE_DISPLAY_PHONE}</span>

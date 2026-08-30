@@ -8,6 +8,18 @@ import { CartItem, Order, Reservation } from '../types';
 export const CAFE_WHATSAPP_NUMBER = '919154273364'; // International format without + or spaces (e.g. +91 91542 73364)
 export const CAFE_DISPLAY_PHONE = '+91 91542 73364';
 
+export const CAFE_MAPS_LINK = `https://www.google.com/maps/dir//Cafe+hidden+garden,+Plot+no.6,+beside+fortuna+women's+hospital,+New+Balaji+Colony,+Tirupati,+Avilali,+Andhra+Pradesh+517501/@16.4954927,80.510502,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a4d4b6a17596ccd:0xc786db7996326caa!2m2!1d79.4117888!2d13.6227442?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D`;
+
+export const CAFE_ADDRESS = {
+  line1: "Plot No. 6, Beside Fortuna Women's Hospital",
+  line2: "New Balaji Colony, Avilali",
+  city: "Tirupati",
+  state: "Andhra Pradesh",
+  pincode: "517501",
+  short: "Plot No. 6, Beside Fortuna Women's Hospital, New Balaji Colony, Tirupati",
+  full: "Plot No. 6, Beside Fortuna Women's Hospital, New Balaji Colony, Tirupati, Avilali, Andhra Pradesh 517501"
+};
+
 /**
  * Creates a clean WhatsApp URL with encoded text payload
  */

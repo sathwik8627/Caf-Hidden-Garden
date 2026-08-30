@@ -4,7 +4,7 @@ import { CheckCircle2, Clock, Coffee, PackageCheck, Sparkles, X, MapPin, Phone }
 import { motion } from 'motion/react';
 import { CafeLogo } from './CafeLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { formatOrderInquiryWhatsAppMessage, openWhatsAppChat, CAFE_DISPLAY_PHONE } from '../utils/whatsapp';
+import { formatOrderInquiryWhatsAppMessage, openWhatsAppChat, CAFE_DISPLAY_PHONE, CAFE_MAPS_LINK, CAFE_ADDRESS } from '../utils/whatsapp';
 
 interface OrderTrackerModalProps {
   order: Order | null;
@@ -168,12 +168,17 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({
 
           {/* Pick up info & WhatsApp */}
           <div className="bg-[#EAE7E2] p-3.5 border border-[#1A1A1A]/15 text-xs text-[#666666] space-y-2 font-light">
-            <div className="flex items-center gap-1.5 font-medium text-[#1A1A1A]">
-              <MapPin className="w-4 h-4 text-[#1A1A1A]" />
-              <span>Café Hidden Garden • Main Conservatory Bar</span>
-            </div>
+            <a
+              href={CAFE_MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 font-medium text-[#1A1A1A] hover:underline"
+            >
+              <MapPin className="w-4 h-4 text-[#1A1A1A] shrink-0" />
+              <span>Café Hidden Garden • Tirupati</span>
+            </a>
             <p className="pl-5 text-xs text-[#666666]">
-              428 Wisteria Lane, Historic Botanical Conservatory
+              {CAFE_ADDRESS.full}
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-1 border-t border-[#1A1A1A]/10">
               <div className="flex items-center gap-1.5 text-xs text-[#1A1A1A]">

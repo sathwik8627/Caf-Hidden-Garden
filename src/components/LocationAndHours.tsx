@@ -3,7 +3,7 @@ import { FAQS } from '../data/mockData';
 import { MapPin, Clock, Phone, Mail, ChevronDown, ChevronUp, Send, CheckCircle2, Sparkles, Navigation, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { openWhatsAppChat, formatGeneralInquiryWhatsAppMessage, CAFE_DISPLAY_PHONE } from '../utils/whatsapp';
+import { openWhatsAppChat, formatGeneralInquiryWhatsAppMessage, CAFE_DISPLAY_PHONE, CAFE_MAPS_LINK, CAFE_ADDRESS } from '../utils/whatsapp';
 
 export const LocationAndHours: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -126,41 +126,49 @@ export const LocationAndHours: React.FC = () => {
                   <h3 className="font-serif text-2xl font-normal text-[#1A1A1A]">
                     Location & Arrival
                   </h3>
-                  <p className="text-xs text-[#666666] font-light">428 Wisteria Lane, Historic Botanical Conservatory</p>
+                  <p className="text-xs text-[#666666] font-light">{CAFE_ADDRESS.full}</p>
                 </div>
               </div>
 
-              {/* Simulated Illustrated Map Preview */}
-              <div className="relative h-44 border border-[#1A1A1A]/20 overflow-hidden bg-[#F5F2ED] flex items-center justify-center">
+              {/* Simulated Illustrated Map Preview with Clickable Link */}
+              <a
+                href={CAFE_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative h-44 border border-[#1A1A1A]/20 overflow-hidden bg-[#F5F2ED] flex items-center justify-center block cursor-pointer"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80"
-                  alt="Cafe Garden Location grounds"
-                  className="w-full h-full object-cover opacity-60"
+                  alt="Cafe Hidden Garden Tirupati Location"
+                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-[#1A1A1A]/40 backdrop-blur-2xs flex flex-col items-center justify-center text-white p-4 text-center">
-                  <MapPin className="w-7 h-7 text-white animate-bounce mb-1" />
-                  <p className="font-serif text-lg">Café Hidden Garden</p>
-                  <span className="text-xs text-stone-300 font-light">Main Entrance via the Victorian Wisteria Arches</span>
+                <div className="absolute inset-0 bg-[#1A1A1A]/50 backdrop-blur-2xs flex flex-col items-center justify-center text-white p-4 text-center">
+                  <MapPin className="w-7 h-7 text-white group-hover:scale-110 transition-transform mb-1" />
+                  <p className="font-serif text-lg font-medium">Café Hidden Garden</p>
+                  <span className="text-xs text-stone-200 font-light mt-0.5">{CAFE_ADDRESS.short}</span>
+                  <span className="inline-flex items-center gap-1 mt-2 text-[11px] font-semibold uppercase tracking-wider text-white bg-black/40 px-2.5 py-1 border border-white/30">
+                    <Navigation className="w-3 h-3" /> Get Live Driving Directions
+                  </span>
                 </div>
-              </div>
+              </a>
 
               <div className="space-y-2 text-xs text-[#666666] font-light">
-                <p>• <strong className="text-[#1A1A1A] font-semibold">By Metro / Transit:</strong> 3-minute walk from Conservatory Square Station (Exit B).</p>
-                <p>• <strong className="text-[#1A1A1A] font-semibold">By Bike:</strong> Dedicated racks available right beside the plant nursery.</p>
-                <p>• <strong className="text-[#1A1A1A] font-semibold">Parking:</strong> Validated 2-hour underground parking at Green Arch Garage.</p>
+                <p>• <strong className="text-[#1A1A1A] font-semibold">Landmark:</strong> Beside Fortuna Women's Hospital, New Balaji Colony, Avilali, Tirupati.</p>
+                <p>• <strong className="text-[#1A1A1A] font-semibold">Postal Code:</strong> 517501, Andhra Pradesh, India.</p>
+                <p>• <strong className="text-[#1A1A1A] font-semibold">Parking:</strong> Dedicated visitor parking & bike parking at the café entrance.</p>
               </div>
             </div>
 
             <div className="pt-2">
               <a
-                href="https://maps.google.com"
+                href={CAFE_MAPS_LINK}
                 target="_blank"
-                rel="noreferrer"
-                className="w-full py-3 bg-[#1A1A1A] hover:bg-black text-[#F5F2ED] font-semibold text-xs uppercase tracking-wider border border-[#1A1A1A] flex items-center justify-center gap-2 transition-all"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-[#1A1A1A] hover:bg-black text-[#F5F2ED] font-semibold text-xs uppercase tracking-wider border border-[#1A1A1A] flex items-center justify-center gap-2 transition-all shadow-xs"
               >
                 <Navigation className="w-3.5 h-3.5" />
-                <span>Open in Google Maps</span>
+                <span>Open in Google Maps / Get Directions</span>
               </a>
             </div>
           </div>

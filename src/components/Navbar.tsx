@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Volume2, VolumeX, Menu, X, CalendarCheck, Sparkles, MapPin, Clock, Instagram } from 'lucide-react';
 import { gardenAudio } from '../utils/audioSoundscape';
 import { CafeLogo } from './CafeLogo';
+import { CAFE_MAPS_LINK } from '../utils/whatsapp';
 
 interface NavbarProps {
   cartCount: number;
@@ -55,6 +56,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span>Open Today: 7:30 AM – 8:00 PM</span>
         </span>
         <span className="hidden md:inline-block text-stone-500">/</span>
+        <a
+          href={CAFE_MAPS_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:flex items-center gap-1 text-[#C2BDAF] hover:text-white transition-colors"
+          title="Open Café Hidden Garden in Google Maps"
+        >
+          <MapPin className="w-3 h-3 text-[#C2BDAF]" />
+          <span>Tirupati, AP</span>
+        </a>
+        <span className="hidden sm:inline-block text-stone-500">/</span>
         <a
           href="https://www.instagram.com/cafe_hidden_garden_/"
           target="_blank"
@@ -213,6 +225,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <span>Instagram Feed</span>
                 <span className="text-[10px] text-pink-600 font-bold lowercase">@cafe_hidden_garden_</span>
+              </a>
+              <a
+                href={CAFE_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-xs uppercase tracking-[0.2em] font-semibold text-[#1A1A1A] hover:text-[#666666] py-1.5 border-b border-[#1A1A1A]/10 flex items-center justify-between"
+              >
+                <span>Google Maps Location</span>
+                <span className="text-[10px] text-[#1A1A1A] font-bold">Tirupati ↗</span>
               </a>
             </div>
             <div className="pt-2">

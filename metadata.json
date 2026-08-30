@@ -1,0 +1,6 @@
+{
+  "name": "Café Hidden Garden",
+  "description": "Artisanal coffee sanctuary & farm-to-table botanical bistro nestled inside a lush greenhouse oasis with table reservations, seasonal menus, and online ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

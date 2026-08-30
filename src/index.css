@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --color-editorial-bg: #F5F2ED;
+  --color-editorial-card: #FFFFFF;
+  --color-editorial-subtle: #EAE7E2;
+  --color-editorial-muted: #E2DFD9;
+  --color-editorial-ink: #1A1A1A;
+  --color-editorial-secondary: #666666;
+  --color-editorial-tertiary: #999999;
+  --color-editorial-dark: #111111;
+  --color-garden-50: #F5F2ED;
+  --color-garden-100: #EAE7E2;
+  --color-garden-200: #D8D4CC;
+  --color-garden-300: #C2BDAF;
+  --color-garden-500: #5C8363;
+  --color-garden-600: #38533E;
+  --color-garden-700: #2C4231;
+  --color-garden-800: #1D2B20;
+  --color-garden-900: #141D16;
+  --color-earth-100: #F5F2ED;
+  --color-earth-200: #EAE7E2;
+  --color-earth-300: #D8D4CC;
+  --color-earth-800: #2C2825;
+  --color-earth-900: #1A1A1A;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background-color: #F5F2ED;
+  color: #1A1A1A;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D4CC;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1A1A1A;
+}

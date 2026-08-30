@@ -234,47 +234,7 @@ END:VCALENDAR`;
 
           {step === 'form' ? (
             <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
-              {/* 1. Seating Area Selector */}
-              <div>
-                <label className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#1A1A1A] block mb-3">
-                  1. Choose Your Botanical Seating Oasis
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {SEATING_AREAS.map(area => {
-                    const isSelected = selectedAreaId === area.id;
-                    return (
-                      <div
-                        key={area.id}
-                        onClick={() => setSelectedAreaId(area.id)}
-                        className={`relative border p-3 cursor-pointer transition-all ${
-                          isSelected
-                            ? 'bg-white border-[#1A1A1A] ring-1 ring-[#1A1A1A]'
-                            : 'bg-[#EAE7E2] border-[#1A1A1A]/20 hover:border-[#1A1A1A]'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={area.image}
-                            alt={area.name}
-                            className="w-14 h-14 object-cover border border-[#1A1A1A]/20"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-serif font-medium text-sm text-[#1A1A1A] truncate">
-                              {area.name}
-                            </h4>
-                            <p className="text-xs text-[#666666] font-light truncate">{area.subtitle}</p>
-                            <span className="inline-block mt-1 text-[10px] font-medium text-[#1A1A1A] bg-white px-2 py-0.5 border border-[#1A1A1A]/20">
-                              {area.capacity}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* 2. Date, Time, Guests */}
+              {/* Date, Time, Guests */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label htmlFor="res-date" className="text-[10px] uppercase font-semibold tracking-[0.2em] text-[#1A1A1A] flex items-center gap-1.5 mb-1.5">
@@ -423,24 +383,15 @@ END:VCALENDAR`;
                   <span>Instant confirmation • WhatsApp Concierge: <strong>{CAFE_DISPLAY_PHONE}</strong></span>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row items-center gap-2.5">
-                  <button
-                    type="button"
-                    id="reserve-via-whatsapp-btn"
-                    onClick={handleReserveViaWhatsApp}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#1EBE5D] shadow-xs hover:shadow-md transition-all cursor-pointer"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 fill-current" />
-                    <span>Book via WhatsApp</span>
-                  </button>
-                  <button
-                    type="submit"
-                    id="confirm-table-booking-btn"
-                    className="w-full sm:w-auto px-6 py-3.5 bg-[#1A1A1A] hover:bg-black text-[#F5F2ED] font-semibold text-xs uppercase tracking-wider border border-[#1A1A1A] transition-all cursor-pointer"
-                  >
-                    Confirm in App
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  id="reserve-via-whatsapp-btn"
+                  onClick={handleReserveViaWhatsApp}
+                  className="w-full sm:w-auto px-8 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#1EBE5D] shadow-xs hover:shadow-md transition-all cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-4 h-4 fill-current" />
+                  <span>Book via WhatsApp</span>
+                </button>
               </div>
             </form>
           ) : (

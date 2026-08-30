@@ -439,31 +439,14 @@ export const OnlineOrderingDrawer: React.FC<OnlineOrderingDrawerProps> = ({
                     id="order-via-whatsapp-btn"
                     onClick={handleWhatsAppOrder}
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider border border-[#1EBE5D] shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 px-6 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider border border-[#1EBE5D] shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     <WhatsAppIcon className="w-4 h-4 fill-current" />
                     <span>Order via WhatsApp ({orderType === 'takeaway' ? 'Takeaway' : 'Table Service'})</span>
                   </button>
 
-                  <button
-                    type="button"
-                    id="submit-garden-order-btn"
-                    onClick={handleCheckout}
-                    disabled={isSubmitting}
-                    className="w-full py-3 px-6 bg-white hover:bg-[#EAE7E2] text-[#1A1A1A] font-semibold text-xs uppercase tracking-wider border border-[#1A1A1A] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      <span>Placing Order...</span>
-                    ) : (
-                      <>
-                        <span>Place Direct App Order</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </>
-                    )}
-                  </button>
-
                   <p className="text-[11px] text-center text-[#666666] font-light">
-                    Direct dispatch to Barista WhatsApp: <strong className="text-[#1A1A1A]">{CAFE_DISPLAY_PHONE}</strong>
+                    Instant dispatch to Barista WhatsApp: <strong className="text-[#1A1A1A]">{CAFE_DISPLAY_PHONE}</strong>
                   </p>
                 </div>
               </div>
